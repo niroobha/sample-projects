@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.producer.api</groupId>
-	<artifactId>spring-contract-producer-api</artifactId>
+	<groupId>com.producer.api.test</groupId>
+	<artifactId>spring-contract-producer-apitest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-contract-producer-api</name>
+	<name>spring-contract-producer-apitest</name>
 	<url>http://maven.apache.org</url>
 
 	<parent>
@@ -19,36 +19,36 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.cloud.version>Camden.SR7</spring.cloud.version>
-		<spring.cloud.contract.plugin.version>1.1.0.RELEASE</spring.cloud.contract.plugin.version>
-		<springboot.starter.parent.version>1.5.3.RELEASE</springboot.starter.parent.version>
+		<spring.cloud.contract.plugin.version>1.1.1.RELEASE</spring.cloud.contract.plugin.version>
 	</properties>
 
 	<dependencyManagement>
-		
 		<dependencies>
-		
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring.cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>			
+			</dependency>
 
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-dependencies</artifactId>
+				<version>1.1.1.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
-		
 	</dependencyManagement>
 
 	<dependencies>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>com.producer.api</groupId>
+			<artifactId>spring-contract-producer-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -56,12 +56,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-starter-contract-verifier</artifactId>
-				<scope>test</scope>
-			</dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -78,5 +78,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
